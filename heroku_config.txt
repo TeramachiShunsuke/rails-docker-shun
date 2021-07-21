@@ -1,0 +1,10 @@
+@ heroku config:add APP_DATABASE='heroku_5591886d5f7d2fc' -a rails-docker-shun
+@ heroku config:add APP_DATABASE_USERNAME='b3f4f9713d8e2b' -a rails-docker-shun 
+@ heroku config:add APP_DATABASE_PASSWORD='73d896c8' -a rails-docker-shun 
+@ heroku config:add APP_DATABASE_HOST='us-cdbr-east-04.cleardb.com' -a rails-docker-shun 
+@ heroku config:add RAILS_SERVE_STATIC_FILES='true' -a rails-docker-shun 
+
+
+
+
+

@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  # MYSQLのDockerの設定
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./src/db/mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  # Webの設定「App」
+  web:
+    build: .
+    command: bundle exec rails s -p 3001 -b '0.0.0.0'
+    # Docker とローカルの同期
+    volumes:
+      - ./src:/app
+    ports:
+      - "3001:3001"
+    # DBと依存関係
+    depends_on:
+      - db
